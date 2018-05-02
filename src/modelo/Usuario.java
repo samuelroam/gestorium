@@ -8,6 +8,7 @@ public class Usuario {
 	private int id;
 	private String nombre;
 	private String apellido;
+	private String user;
 	private int edad;
 	private String dni;
 	private Date fechaNacimiento;
@@ -81,6 +82,12 @@ public class Usuario {
 	}
 	public void setRol(String rol) {
 		this.rol = rol;
+	}
+	public String getUser() {
+		return user;
+	}
+	public void setUser(String user) {
+		this.user = user;
 	}
 	
 }

@@ -1,0 +1,59 @@
+@CHARSET "ISO-8859-1";
+
+body{
+	background-color: black; 
+	color: white; 
+	
+}
+
+form {
+	margin-top: 5%;
+}
+
+#loginform{
+	margin: auto; 
+	width: 30%;
+	height: 500px;
+	background: #13232f;
+	text-align: center;
+}
+
+#tipoForm{
+	margin-top: 5%;
+	margin: auto;
+	height: auto;
+	margin-top: 20px;
+}
+
+
+div.tipoForm{
+	vertical-align: middle;
+	display: inline-block;
+	padding: 5% 10%;
+	margin-top: 5%;
+}
+
+div.tipoForm:hover{
+	background-color: #00e6ac; 
+}
+
+.seleccionado {
+	background: #1ab188;
+}
+
+iframe{
+	margin-top: 10%;
+	height: 50%;
+	width: 90%;
+}
+
+
+/* ESTILO DE LAS PÁGINAS DE LOGIN Y REGITRO */
+
+input{
+	background: #13232f;
+	margin: 10px;
+	height: 30px;
+	width: 200px;
+	color: white;
+}
