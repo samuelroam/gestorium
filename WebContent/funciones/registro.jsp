@@ -19,10 +19,10 @@ if(nombre != null && pass != null){
 	usuario.setUser(nombre);
 	usuario.setPassword(pass);
 	usuarioModelo.insert(usuario); 
-	response.sendRedirect("../log/loginForm.jsp"); 
+	response.sendRedirect("../funciones/loginForm.jsp"); 
 	
 }else{
-	response.sendRedirect("../log/loginForm.jsp"); 
+	response.sendRedirect("../funciones/loginForm.jsp"); 
 }
 %>
 </body>
