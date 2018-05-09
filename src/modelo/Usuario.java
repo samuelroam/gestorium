@@ -7,46 +7,9 @@ public class Usuario {
 	//atributos
 	private int id;
 	private String nombre;
-	private String apellido;
-	private String user;
-	private int edad;
-	private String dni;
-	private Date fechaNacimiento;
-	private String password;
-	private String rol;
+	private String email;
+	private String contrasena;
 	
-	public static final  String USUARIO = "usuario";
-	public static final String ADMIN = "admin";
-
-	private ArrayList<Prestamo> prestamos;
-	
-	//metodos
-	
-	public boolean esAdmin(){
-		return this.rol.equals(ADMIN);
-	}
-	public boolean esUsuario(){
-		return this.rol.equals(USUARIO);
-	}
-	public ArrayList<Prestamo> getPrestamos() {
-		return prestamos;
-	}
-	public void setPrestamos(ArrayList<Prestamo> prestamos) {
-		this.prestamos = prestamos;
-	}
-	public String getDni() {
-		return dni;
-	}
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
-	public Date getFechaNacimiento() {
-		return fechaNacimiento;
-	}
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
-	}
-	//getters and setters
 	public int getId() {
 		return id;
 	}
@@ -59,35 +22,24 @@ public class Usuario {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getApellido() {
-		return apellido;
+	public String getEmail() {
+		return email;
 	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public int getEdad() {
-		return edad;
+	public String getContrasena() {
+		return contrasena;
 	}
-	public void setEdad(int edad) {
-		this.edad = edad;
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
-	public String getPassword() {
-		return password;
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", nombre=" + nombre + ", email=" + email + ", contrasena=" + contrasena + "]";
 	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getRol() {
-		return rol;
-	}
-	public void setRol(String rol) {
-		this.rol = rol;
-	}
-	public String getUser() {
-		return user;
-	}
-	public void setUser(String user) {
-		this.user = user;
-	}
+	
+	
+
 	
 }
