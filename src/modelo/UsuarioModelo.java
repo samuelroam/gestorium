@@ -7,10 +7,7 @@ import java.util.ArrayList;
 
 public class UsuarioModelo extends Conector {
 
-	public ArrayList<Usuario> selectAll() {
-		return null;
 
-	}
 
 	public Usuario comprobarLogin(String email) {
 		try {

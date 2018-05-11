@@ -24,23 +24,19 @@
 
 String email = request.getParameter("email");
 String password = request.getParameter("password");
-
+/* out.println(email + password); */
 UsuarioModelo modeloUsuario = new UsuarioModelo();
 Usuario usuario = modeloUsuario.comprobarLogin(email);
 
+if (usuario != null && password.equals(usuario.getContrasena())) {
+	session.setAttribute("usuario", usuario);
+	response.sendRedirect("inicio.html");
+} else {
+	response.sendRedirect("index.jsp");
+} 
 
 
-if(status){  
-out.println("You r successfully logged in");  
-session.setAttribute("session","TRUE");  
-}  
-else  
-{  
-out.print("Sorry, email or password error");  
-%>  
-<jsp:include page="index.jsp"></jsp:include>  
-<%  
-}  
+
 %>
 
 </body>
