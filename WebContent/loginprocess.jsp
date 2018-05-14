@@ -32,7 +32,7 @@ if (usuario != null && password.equals(usuario.getContrasena())) {
 	session.setAttribute("usuario", usuario);
 	response.sendRedirect("inicio.html");
 } else {
-	response.sendRedirect("index.jsp");
+	response.sendRedirect("fallo.html");
 } 
 
 
