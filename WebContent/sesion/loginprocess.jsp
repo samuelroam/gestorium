@@ -30,7 +30,7 @@ Usuario usuario = modeloUsuario.comprobarLogin(email);
 
 if (usuario != null && password.equals(usuario.getContrasena())) {
 	session.setAttribute("usuario", usuario);
-	response.sendRedirect("autenticado.html");
+	response.sendRedirect("autenticado.jsp");
 } else {
 	response.sendRedirect("fallo.html");
 } 

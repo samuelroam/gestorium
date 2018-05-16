@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
-    <%@page import="modelo.RegisterDao" %>
-    <jsp:useBean id="obj" class="modelo.User"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,14 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="includes/nav.html" %>
 
-    <jsp:setProperty property="*" name="obj"/>
+<a href="../sesion/loginForm.jsp">Ir al login</a>
+<a href="registerForm.jsp">Registrarse</a>
 
-<%
-int status=RegisterDao.register(obj);
-if(status>0)
-	out.print("You are successfully registered");
-%>
 
 </body>
 </html>

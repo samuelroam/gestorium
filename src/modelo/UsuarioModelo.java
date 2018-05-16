@@ -46,8 +46,18 @@ public class UsuarioModelo extends Conector {
 
 	}
 
-	public void insert(Usuario usuario) {
+	public void insertarUsuario(Usuario usuario) {
+		try {
+			PreparedStatement pst = super.conexion
+					.prepareStatement("INSERT INTO usuarios (nombre, contrasena, email) values(?,?,?)");
+			pst.setString(1, usuario.getNombre());
+			pst.setString(2, usuario.getContrasena());
+			pst.setString(3, usuario.getEmail());
 
+			pst.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public ArrayList<Usuario> selectPorNombre(String nombre) {
