@@ -7,6 +7,7 @@ public class Libro {
 	private int id;
 	private String titulo;
 	private String autor;
+	private String fecha;
 	private ArrayList<Prestamo> prestamos;
 
 	public int getId() {
@@ -33,6 +34,14 @@ public class Libro {
 		this.autor = autor;
 	}
 	
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
 	public ArrayList<Prestamo> getPrestamos() {
 		return prestamos;
 	}

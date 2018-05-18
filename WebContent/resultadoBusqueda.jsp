@@ -4,14 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Logout</title>
+<title>Insert title here</title>
 </head>
 <body>
+<%@include file="includes/nav.html" %>
 
-<%
-session.removeAttribute("usuario");
-response.sendRedirect("../inicio.jsp");
-%>
 
 
 </body>

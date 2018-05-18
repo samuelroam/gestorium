@@ -11,7 +11,7 @@ public class LibroModelo extends Conector {
 	public ArrayList<Libro> selectAll() {
 
 		ArrayList<Libro> libros = new ArrayList<Libro>();
-		PrestamoModelo prestamoModelo = new PrestamoModelo();
+		
 
 		try {
 			Statement st = super.conexion.createStatement();
@@ -21,7 +21,7 @@ public class LibroModelo extends Conector {
 				libro.setId(rs.getInt("id"));
 				libro.setTitulo(rs.getString("titulo"));
 				libro.setAutor(rs.getString("autor"));
-				libro.setPrestamos(prestamoModelo.prestamosDelLibro(libro));
+				libro.setFecha(rs.getString("fecha"));
 
 				libros.add(libro);
 			}
@@ -65,6 +65,7 @@ public class LibroModelo extends Conector {
 				libro.setId(rs.getInt("id"));
 				libro.setTitulo(rs.getString("titulo"));
 				libro.setAutor(rs.getString("autor"));
+				libro.setFecha(rs.getString("fecha"));
 				return libro;
 			}
 

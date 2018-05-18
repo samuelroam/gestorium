@@ -5,9 +5,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#emailo").click(function(){
+        $("#emilio").fadeIn();
+    });
+    $("#email").mouseleave(function(){
+    	$("#emilio").delay(800).fadeOut();
+    })
+
+    
+});
+</script>
 </head>
 <body>
-
 
 <hr/>  
   
@@ -24,8 +36,10 @@ out.print(login_msg);
  %>  
  <br/>  
 <form action="loginprocess.jsp" method="post">  
-Email:<input type="text" name="email"/><br/><br/>  
-Password:<input type="password" name="password"/><br/><br/>  
+<div id="email">Email:<input type="text" name="email" placeholder="email"/><br/><br/></div>
+<div id="emailo" style=";width:25px;height:25px;border:2px solid black;text-align:center;">?</div>
+<div id="emilio" style="float:left;display:none;background-color:red;">email para iniciar sesion</div><br>
+<div id="password">Password:<input type="password" name="password"/><br/><br/></div>
 <input type="submit" value="login"/>
 </form>
 

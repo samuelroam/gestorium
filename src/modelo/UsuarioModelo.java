@@ -3,10 +3,31 @@ package modelo;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class UsuarioModelo extends Conector {
+	public ArrayList<Usuario> selectAll() {
 
+		ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+		String sql = "SELECT * FROM usuarios";
+		try {
+			Statement stt = super.conexion.createStatement();
+			ResultSet rst = stt.executeQuery(sql);
+			while (rst.next()) {
+				Usuario usuario = new Usuario();
+				usuario.setId(rst.getInt("id"));
+				usuario.setNombre(rst.getString("nombre"));
+				usuario.setContrasena(rst.getString("contrasena"));
+				usuario.setEmail(rst.getString("email"));
+				usuarios.add(usuario);
+			}
+			return usuarios;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return usuarios;
+	}
 
 
 	public Usuario comprobarLogin(String email) {

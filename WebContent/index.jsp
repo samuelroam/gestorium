@@ -7,14 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<h1>Bienvenido a gestorium</h1>
-<p>Tu nuevo gestor de biblioteca online</p>
-<a href=#>continuar</a>
-<a href="logout.jsp">logout</a>
-
-<%
-
-%>
+<h1>Esta será tu biblioteca preferida</h1>
+<a href="busqueda.jsp">buscar libro</a>
 </body>
 </html>

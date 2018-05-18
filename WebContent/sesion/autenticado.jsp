@@ -4,15 +4,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Logout</title>
+<title>Insert title here</title>
 </head>
 <body>
 
+<h1>Bienvenido a gestorium</h1>
+<p>Tu nuevo gestor de biblioteca online</p>
+<a href="../index.html">continuar</a>
+<a href="logout.jsp">logout</a>
+
 <%
-session.removeAttribute("usuario");
-response.sendRedirect("../inicio.jsp");
+
 %>
-
-
 </body>
 </html>

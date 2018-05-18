@@ -5,23 +5,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Index</title>
+<title>Registro</title>
 </head>
 <body>
 
 <form action="register.jsp">
 
-<input type="text" name="nombre" value="nombre" onclick="this.value"/>
+<input type="text" name="nombre" placeholder="tu nombre" onclick="this.value"/>
 <br>
-<input type="text" name="email" value="email" onclick="this.value"/>
+<input type="text" name="email" placeholder="email. con esto inicias sesion" onclick="this.value"/>
 <br>
-<input type="password" name="password" value="contrasena" onclick="this.value"/>
+<input type="password" name="password" placeholder="contraseña" onclick="this.value"/>
 <br>
 <input type="submit" value="register"/>
 
 </form>
-
-
 
 <%
 	/*  */
