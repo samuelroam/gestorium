@@ -9,19 +9,23 @@
 </head>
 <body>
 <%
-String titulo = request.getParameter("titulo");
-/* out.println(email + password); */
+String titulo = request.getParameter("busqueda");
 LibroModelo modeloLibro = new LibroModelo();
 Libro libro = modeloLibro.selectPorTitulo(titulo);
 
 out.println(titulo);
 
+Libro librop = new Libro();
+librop.getTitulo(titulo);
+librop.getAutor(autor);
+librop.getFecha(fecha);
 
-/* if (libro != null ) {
+
+if (libro != null ) {
 	out.println(titulo);
 } else {
 	response.sendRedirect("fallo.html");
 } 
- */%>
+%>
 </body>
 </html>

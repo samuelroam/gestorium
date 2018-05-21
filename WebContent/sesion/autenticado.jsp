@@ -7,10 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="../includes/nav.html" %>
+
 
 <h1>Bienvenido a gestorium</h1>
 <p>Tu nuevo gestor de biblioteca online</p>
-<a href="../index.html">continuar</a>
+<a href="../index.jsp">continuar</a>
 <a href="logout.jsp">logout</a>
 
 <%

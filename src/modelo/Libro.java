@@ -77,6 +77,11 @@ public class Libro {
 		//todos los prestamos estan entregados
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Libro [id=" + id + ", titulo=" + titulo + ", autor=" + autor + ", fecha=" + fecha + "]";
+	}
 	
 	
 	

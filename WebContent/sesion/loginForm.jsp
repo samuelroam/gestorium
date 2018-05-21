@@ -20,6 +20,8 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+<%@include file="../includes/nav.html" %>
+
 
 <hr/>  
   
