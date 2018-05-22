@@ -32,6 +32,23 @@ public class LibroModelo extends Conector {
 		}
 		return libros;
 	}
+	
+	
+	public void insertarLibro(Libro libro) {
+		try {
+			PreparedStatement pst = super.conexion
+					.prepareStatement("INSERT INTO libros (titulo, autor, fecha) values(?,?,?)");
+			pst.setString(1, libro.getTitulo());
+			pst.setString(2, libro.getAutor());
+			pst.setString(3, libro.getFecha());
+
+			pst.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
 
 	public Libro select(int id) {
 		try {

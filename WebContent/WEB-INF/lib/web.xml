@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
 <web-app xmlns="http://java.sun.com/xml/ns/j2ee"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
@@ -13,14 +11,25 @@
 <!-- Publicamos nuestro servlet aqui -->
 
     <servlet>
+        <servlet-name>ListarUsuarios</servlet-name>
+        <servlet-class>servlets.ListarUsuarios</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ListarUsuarios</servlet-name>
+        <url-pattern>/ListarUsuarios</url-pattern>
+    </servlet-mapping>
+    
+        <servlet>
         <servlet-name>Prueba1</servlet-name>
-        <servlet-class>Prueba1</servlet-class>
+        <servlet-class>servlets.Prueba1</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>Prueba1</servlet-name>
         <url-pattern>/Prueba1</url-pattern>
     </servlet-mapping>
+    
 
 <!-- Fin de la publicacion de servlets -->
 
