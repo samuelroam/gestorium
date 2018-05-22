@@ -21,7 +21,7 @@ libro.setFecha(fecha);
 
 libroModelo.insertarLibro(libro);
 
-response.sendRedirect("../autenticado.jsp");
+response.sendRedirect("listarLibros.jsp");
 %>
 
 </body>

@@ -12,7 +12,7 @@
 <h1>Esta será tu biblioteca preferida</h1>
 <a href="ListarUsuarios">Listar Usuarios</a>
 <a href="busqueda.jsp">buscar libro</a>
-<a href="gestores/libros/listar.jsp">listar libros</a>
+<a href="libros/listarLibros.jsp">listar libros</a>
 <a href="anadirLibro.jsp">añadir un libro</a>
 </body>
 </html>

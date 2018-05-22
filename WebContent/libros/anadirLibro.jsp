@@ -7,13 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="listarLibros.jsp" %>
 <form action="crearLibro.jsp">
 
 <input type="text" name="titulo" placeholder="nombre del libro" onclick="this.value"/>
 <br>
 <input type="text" name="autor" placeholder="autor del libro" onclick="this.value"/>
 <br>
-<input type="password" name="fecha" placeholder="fecha" onclick="this.value"/>
+<input type="text" name="fecha" placeholder="fecha" onclick="this.value"/>
 <br>
 <input type="submit" value="añadir"/>
 
