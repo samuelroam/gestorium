@@ -38,12 +38,12 @@
 			<%
 			Iterator<Libro> i = libros.iterator();
 			Libro libro;
-			PrestamoModelo  prestamoModelo = new PrestamoModelo();
+			LibroModelo  modeloLibro = new LibroModelo();
 			
 			while(i.hasNext()){
 				libro = i.next();
 				String clase;
-				if(prestamoModelo.estaDisponible(libro)){
+				if(libroModelo.estaDisponible(libro)){
 					clase = "table-success";
 					//out.print("<tr class='table-success'>");
 				}else{
@@ -62,7 +62,9 @@
 						<%=libro.getFecha() %>
 					</td>
 					<td>
-						<a href="ver.jsp?id=<%=libro.getId()%>">ver</a>
+						<%=libro.isEntregado() %>
+					<td>
+						<a class="btn btn-info" href="../VerLibro?id=<%=libro.getId()%>">ver</a>
 					</td>
 				</tr>
 				<%
