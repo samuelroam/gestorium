@@ -1,6 +1,7 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 
 public class Libro {
@@ -9,6 +10,11 @@ public class Libro {
 	private String autor;
 	private String fecha;
 	private ArrayList<Prestamo> prestamos;
+	
+	private Usuario usuario;
+	private Date fechaPrestamo;
+	private Date fechaLimite;
+	private boolean entregado;
 
 	public int getId() {
 		return id;
@@ -81,6 +87,38 @@ public class Libro {
 	@Override
 	public String toString() {
 		return "Libro [id=" + id + ", titulo=" + titulo + ", autor=" + autor + ", fecha=" + fecha + "]";
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Date getFechaPrestamo() {
+		return fechaPrestamo;
+	}
+
+	public void setFechaPrestamo(Date fechaPrestamo) {
+		this.fechaPrestamo = fechaPrestamo;
+	}
+
+	public Date getFechaLimite() {
+		return fechaLimite;
+	}
+
+	public void setFechaLimite(Date fechaLimite) {
+		this.fechaLimite = fechaLimite;
+	}
+
+	public boolean isEntregado() {
+		return entregado;
+	}
+
+	public void setEntregado(boolean entregado) {
+		this.entregado = entregado;
 	}
 	
 	

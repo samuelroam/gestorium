@@ -22,6 +22,8 @@ public class LibroModelo extends Conector {
 				libro.setTitulo(rs.getString("titulo"));
 				libro.setAutor(rs.getString("autor"));
 				libro.setFecha(rs.getString("fecha"));
+				libro.setEntregado(rs.getBoolean("prestado"));
+				libro.setFechaPrestamo(rs.getDate("fechaPrestamo"));
 
 				libros.add(libro);
 			}
@@ -121,17 +123,43 @@ public class LibroModelo extends Conector {
 		}
 	}
 
-	public void insert(Libro libro) {
+	
+	public boolean estaDisponible(Libro libro){
+		
 		try {
-			PreparedStatement pst = super.conexion.prepareStatement("INSERT INTO libros (titulo, autor) values(?,?)");
-			pst.setString(1, libro.getTitulo());
-			pst.setString(2, libro.getAutor());
-
-			pst.execute();
-
+			PreparedStatement pst = super.conexion.prepareStatement("select * from libros where id= ? and prestado=0");
+			pst.setInt(1, libro.getId());
+			ResultSet rs = pst.executeQuery();
+			if(rs.next()){
+				return false;
+			}else{
+				return true;
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		};
+		return false;
+		
+	}
+	
+	
+	public void prestar(Libro libro) {
+		PreparedStatement pst;
+		try {
+			pst = super.conexion.prepareStatement("UPDATE libros SET id=?,prestado=?,usuario=?,fechaPrestamo=? WHERE id=?");
+			pst.setInt(1, libro.getId());
+			pst.setBoolean(2, libro.isEntregado());
+			pst.setString(3, libro.getUsuario().getNombre());
+			java.sql.Date fechaPrestamo= new java.sql.Date(libro.getFechaPrestamo().getTime());
+			pst.setDate(4, fechaPrestamo);
+			pst.executeUpdate();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
+		
 	}
 }
