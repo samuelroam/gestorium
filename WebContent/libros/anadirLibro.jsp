@@ -8,6 +8,7 @@
 </head>
 <body>
 <%@include file="listarLibros.jsp" %>
+
 <form action="crearLibro.jsp">
 
 <input type="text" name="titulo" placeholder="nombre del libro" onclick="this.value"/>
