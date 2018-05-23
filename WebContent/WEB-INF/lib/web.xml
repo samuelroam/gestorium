@@ -11,6 +11,15 @@
 <!-- Publicamos nuestro servlet aqui -->
 
     <servlet>
+        <servlet-name>VerLibro</servlet-name>
+        <servlet-class>servlets.VerLibro</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>VerLibro</servlet-name>
+        <url-pattern>/VerLibro</url-pattern>
+    </servlet-mapping>
+        <servlet>
         <servlet-name>ListarUsuarios</servlet-name>
         <servlet-class>servlets.ListarUsuarios</servlet-class>
     </servlet>
@@ -19,7 +28,6 @@
         <servlet-name>ListarUsuarios</servlet-name>
         <url-pattern>/ListarUsuarios</url-pattern>
     </servlet-mapping>
-    
         <servlet>
         <servlet-name>Prueba1</servlet-name>
         <servlet-class>servlets.Prueba1</servlet-class>
