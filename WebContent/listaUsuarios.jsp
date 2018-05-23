@@ -22,14 +22,7 @@
 					}
 				%>
 			</div>
-			<div>
-			<hr>
-				<h1>La lista de usuarios con jslt</h1>
-				
-				<c:forEach items="${usuarios}" var="usuario">
-					${usuario.nombre} <br>
-				</c:forEach>
-			</div>
+			
 
 </body>
 </html>
