@@ -74,8 +74,29 @@ public class LibroModelo extends Conector {
 	
 	public Libro selectPorTitulo(String titulo) {
 		try {
-			PreparedStatement pst = super.conexion.prepareStatement("select * from libros where titulo = ?");
-			pst.setString(1, titulo);
+			PreparedStatement pst = super.conexion.prepareStatement("select * from libros where titulo like ?");
+			pst.setString(1, "%"+ titulo + "%");
+			ResultSet rs = pst.executeQuery();
+
+			//si hemos recibido alguna fila
+			if (rs.next()) {
+				Libro libro = new Libro();
+				libro.setId(rs.getInt("id"));
+				libro.setTitulo(rs.getString("titulo"));
+				libro.setAutor(rs.getString("autor"));
+				libro.setFecha(rs.getString("fecha"));
+				return libro;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public Libro selectPorAutor(String autor) {
+		try {
+			PreparedStatement pst = super.conexion.prepareStatement("select * from libros where autor like ?");
+			pst.setString(1, "%"+ autor + "%");
 			ResultSet rs = pst.executeQuery();
 
 			//si hemos recibido alguna fila

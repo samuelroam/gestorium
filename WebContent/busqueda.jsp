@@ -11,6 +11,10 @@
 <form action="searchProcess.jsp">
 <input type="text" name="busqueda" placeholder="busca un libro por titulo">
 <input type="submit" value="buscar">
+<br>
+<form action="searchProcess.jsp">
+<input type="text" name="busqueda" placeholder="busca un libro por titulo">
+<input type="submit" value="buscar">
 </form>
 </body>
 </html>
