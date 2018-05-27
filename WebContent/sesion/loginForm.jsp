@@ -38,10 +38,10 @@ out.print(login_msg);
  %>  
  <br/>  
 <form action="loginprocess.jsp" method="post">  
-<div id="email">Email:<input type="text" name="email" placeholder="email"/><br/><br/></div>
+<div id="email">Email:<input type="text" name="email" value="holamundo" placeholder="email"/><br/><br/></div>
 <div id="emailo" style=";width:25px;height:25px;border:2px solid black;text-align:center;">?</div>
 <div id="emilio" style="float:left;display:none;background-color:red;">email para iniciar sesion</div><br>
-<div id="password">Password:<input type="password" name="password"/><br/><br/></div>
+<div id="password">Password:<input type="password" value="mundo" name="password"/><br/><br/></div>
 <input type="submit" value="login"/>
 </form>
 
