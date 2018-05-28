@@ -93,6 +93,30 @@ public class LibroModelo extends Conector {
 		}
 		return null;
 	}
+	
+	public ArrayList<Libro> selectPorTitulop(String titulo) {
+		ArrayList<Libro> libros = new ArrayList();
+		try {
+			PreparedStatement pst = super.conexion.prepareStatement("select * from libros where titulo like ?");
+			pst.setString(1, "%"+ titulo + "%");
+			ResultSet rs = pst.executeQuery();
+
+			//si hemos recibido alguna fila
+			while (rs.next()) {
+				Libro libro = new Libro();
+				libro.setId(rs.getInt("id"));
+				libro.setTitulo(rs.getString("titulo"));
+				libro.setAutor(rs.getString("autor"));
+				libro.setFecha(rs.getString("fecha"));
+				libros.add(libro);
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 	public Libro selectPorAutor(String autor) {
 		try {
 			PreparedStatement pst = super.conexion.prepareStatement("select * from libros where autor like ?");

@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@include file="listarLibros.jsp" %>
 
 <form action="crearLibro.jsp">
 

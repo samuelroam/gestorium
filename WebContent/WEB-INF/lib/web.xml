@@ -10,13 +10,31 @@
 
 <!-- Publicamos nuestro servlet aqui -->
 
-    <servlet>
-        <servlet-name>VerLibro</servlet-name>
-        <servlet-class>servlets.VerLibro</servlet-class>
+	<servlet>
+        <servlet-name>BuscarLibro</servlet-name>
+        <servlet-class>servlets.BuscarLibro</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>VerLibro</servlet-name>
-        <url-pattern>/VerLibro</url-pattern>
+        <servlet-name>BuscarLibro</servlet-name>
+        <url-pattern>/BuscarLibro</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>BuscarPorAutor</servlet-name>
+        <servlet-class>servlets.BuscarPorAutor</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BuscarPorAutor</servlet-name>
+        <url-pattern>/BuscarPorAutor</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>BuscarPorTitulo</servlet-name>
+        <servlet-class>servlets.BuscarPorTitulo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BuscarPorTitulo</servlet-name>
+        <url-pattern>/BuscarPorTitulo</url-pattern>
     </servlet-mapping>
     
     <servlet>
@@ -29,15 +47,14 @@
     </servlet-mapping>
     
     <servlet>
-        <servlet-name>BuscarLibro</servlet-name>
-        <servlet-class>servlets.BuscarLibro</servlet-class>
+        <servlet-name>VerLibro</servlet-name>
+        <servlet-class>servlets.VerLibro</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>BuscarLibro</servlet-name>
-        <url-pattern>/BuscarLibro</url-pattern>
+        <servlet-name>VerLibro</servlet-name>
+        <url-pattern>/VerLibro</url-pattern>
     </servlet-mapping>
     
-
 <!-- Fin de la publicacion de servlets -->
 
 </web-app>

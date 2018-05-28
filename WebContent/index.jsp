@@ -27,7 +27,7 @@
 <br>
 <li><a class="btn btn-warning" href="libros/listarLibros.jsp">listar libros</a></li>
 <br>
-<li><a class="btn btn-warning" href="anadirLibro.jsp">añadir un libro</a></li>
+<li><a class="btn btn-warning" href="libros/anadirLibro.jsp">añadir un libro</a></li>
 <br>
 </ul>
 </div>

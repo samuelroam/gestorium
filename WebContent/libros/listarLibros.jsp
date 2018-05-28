@@ -44,10 +44,10 @@
 				libro = i.next();
 				String clase;
 				if(libroModelo.estaDisponible(libro)){
-					clase = "table-success";
+					clase = "table-danger";
 					//out.print("<tr class='table-success'>");
 				}else{
-					clase = "table-danger";
+					clase = "table-success";
 					//out.print("<tr class='table-danger'>");
 				}
 				%>
