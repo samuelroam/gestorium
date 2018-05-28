@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,9 +10,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import modelo.Libro;
 import modelo.LibroModelo;
+;
 
 /**
  * Servlet implementation class BuscarPorTitulo
@@ -38,7 +41,15 @@ public class BuscarPorTitulo extends HttpServlet {
 		 
 		//acceder al modelo para obtener los librps
 		 LibroModelo modeloLibro = new LibroModelo();
-		   ArrayList<Libro>  libros = modeloLibro.selectPorTitulop(titulo);
+		   ArrayList<Libro>  libros = modeloLibro.selectPorTitulo(titulo);
+		   
+		   Iterator<Libro> i = libros.iterator();
+			Libro libro;
+			LibroModelo libroModelo = new LibroModelo();
+			
+			while(i.hasNext()){
+				libro = i.next();
+			}
 		    
 		//meter el resultado en el request
 			request.setAttribute("libros", libros);

@@ -72,29 +72,8 @@ public class LibroModelo extends Conector {
 		return null;
 	}
 	
-	public Libro selectPorTitulo(String titulo) {
-		try {
-			PreparedStatement pst = super.conexion.prepareStatement("select * from libros where titulo like ?");
-			pst.setString(1, "%"+ titulo + "%");
-			ResultSet rs = pst.executeQuery();
-
-			//si hemos recibido alguna fila
-			if (rs.next()) {
-				Libro libro = new Libro();
-				libro.setId(rs.getInt("id"));
-				libro.setTitulo(rs.getString("titulo"));
-				libro.setAutor(rs.getString("autor"));
-				libro.setFecha(rs.getString("fecha"));
-				return libro;
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
 	
-	public ArrayList<Libro> selectPorTitulop(String titulo) {
+	public ArrayList<Libro> selectPorTitulo(String titulo) {
 		ArrayList<Libro> libros = new ArrayList();
 		try {
 			PreparedStatement pst = super.conexion.prepareStatement("select * from libros where titulo like ?");
@@ -114,31 +93,33 @@ public class LibroModelo extends Conector {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return libros;
 	}
-
-	public Libro selectPorAutor(String autor) {
+	
+	public ArrayList<Libro> selectPorAutor(String autor) {
+		ArrayList<Libro> libros = new ArrayList();
 		try {
 			PreparedStatement pst = super.conexion.prepareStatement("select * from libros where autor like ?");
 			pst.setString(1, "%"+ autor + "%");
 			ResultSet rs = pst.executeQuery();
 
 			//si hemos recibido alguna fila
-			if (rs.next()) {
+			while (rs.next()) {
 				Libro libro = new Libro();
 				libro.setId(rs.getInt("id"));
 				libro.setTitulo(rs.getString("titulo"));
 				libro.setAutor(rs.getString("autor"));
 				libro.setFecha(rs.getString("fecha"));
-				return libro;
+				libros.add(libro);
+				
 			}
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return libros;
 	}
 
+	
 	public void delete(int id) {
 
 		PreparedStatement pst;

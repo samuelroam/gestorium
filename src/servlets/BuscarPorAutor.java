@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,31 +33,24 @@ public class BuscarPorAutor extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		LibroModelo libroModelo = new LibroModelo();
-	    ArrayList<Libro> libros = libroModelo.selectAll();
-	    
-	    
-	    
-	    String autor = request.getParameter("autor");
-	    LibroModelo modeloLibro = new LibroModelo();
-	    Libro libro = modeloLibro.selectPorAutor(autor);
-
-
-	    Libro librop = new Libro();
-	    librop.setTitulo(libro.getTitulo());
-	    librop.setAutor(request.getParameter("autor"));
-	    librop.setFecha(libro.getFecha());
-	    libros.add(librop);
-
-
-	    modeloLibro.selectPorAutor(autor);
-	    
-		
-		
-		request.setAttribute("Libro", libro);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("searchProcess.jsp");
-		rd.forward(request, response);
+		String autor = request.getParameter("autor");
+		 
+		 LibroModelo modeloLibro = new LibroModelo();
+		   ArrayList<Libro>  libros = modeloLibro.selectPorAutor(autor);
+		   
+		   Iterator<Libro> i = libros.iterator();
+			Libro libro;
+			LibroModelo libroModelo = new LibroModelo();
+			
+			while(i.hasNext()){
+				libro = i.next();
+			}
+		    
+		//meter el resultado en el request
+			request.setAttribute("libros", libros);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("listadoLibros.jsp");
+			rd.forward(request, response);
 	}
 
 	/**

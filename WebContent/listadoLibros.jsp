@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@page import="modelo.*" %>
+    <%@page import="servlets.*" %>
         <%@ page import="java.util.ArrayList" %>
     <%@ page import="java.util.Iterator" %>
     
@@ -16,13 +17,24 @@
 <body>
 
 
-<h1>La lista de usuarios con java</h1>
-				<%
-					for(Libro libro : libros){
-						out.println(libro.getTitulo() + "<br>");
+<h1>Resultados de busqueda:</h1>
+<table>
+<tr><th>Titulo</th><th>Autor</th><th>Fecha</th></tr>
+<%
+	for(Libro libro : libros){
+		out.println("<tr>");
+		out.println("<td>"+libro.getTitulo()+"</td>");
+		out.println("<td>"+libro.getAutor()+"</td>");
+		out.println("<td>"+libro.getFecha()+"</td>");
+		out.println("<td>");
+		%>
+		<a href="VerLibro?id=<%=libro.getId()%>">ver</a>
+		<%
+		out.println("</td></tr>");
 					}
 				%>
-
+				
+</table>
 <%-- <%
 			Iterator<Libro> i = libros.iterator();
 			Libro libro;
