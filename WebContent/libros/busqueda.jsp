@@ -8,12 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="BuscarPorTitulo">
+<form action="../BuscarPorTitulo">
 <input type="text" name="titulo" placeholder="busca un libro por titulo">
 <input class="btn btn-primary" type="submit" value="buscar">
 </form>
 <br>
-<form action="BuscarPorAutor">
+<form action="../BuscarPorAutor">
 <input type="text" name="autor" placeholder="busca un libro por autor">
 <input class="btn btn-primary" type="submit" value="buscar">
 </form>

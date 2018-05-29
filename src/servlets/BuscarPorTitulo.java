@@ -54,7 +54,7 @@ public class BuscarPorTitulo extends HttpServlet {
 		//meter el resultado en el request
 			request.setAttribute("libros", libros);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("listadoLibros.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("libros/listadoLibros.jsp");
 		rd.forward(request, response);
 		}
 

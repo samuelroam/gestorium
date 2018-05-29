@@ -62,7 +62,13 @@
 						<%=libro.getFecha() %>
 					</td>
 					<td>
-						<%=libro.isEntregado() %>
+					<%if(libro.isEntregado()==true) {
+						out.println("no está disponible");
+					}else{
+						out.println("está disponible");
+					}
+					%>
+					
 					<td>
 						<a class="btn btn-info" href="../VerLibro?id=<%=libro.getId()%>">ver</a>
 					</td>

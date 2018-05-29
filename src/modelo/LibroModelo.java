@@ -23,7 +23,6 @@ public class LibroModelo extends Conector {
 				libro.setAutor(rs.getString("autor"));
 				libro.setFecha(rs.getString("fecha"));
 				libro.setEntregado(rs.getBoolean("prestado"));
-				libro.setFechaPrestamo(rs.getDate("fechaPrestamo"));
 
 				libros.add(libro);
 			}
@@ -39,11 +38,11 @@ public class LibroModelo extends Conector {
 	public void insertarLibro(Libro libro) {
 		try {
 			PreparedStatement pst = super.conexion
-					.prepareStatement("INSERT INTO libros (titulo, autor, fecha) values(?,?,?)");
+					.prepareStatement("INSERT INTO libros (titulo, autor, fecha, prestado) values(?,?,?,?)");
 			pst.setString(1, libro.getTitulo());
 			pst.setString(2, libro.getAutor());
 			pst.setString(3, libro.getFecha());
-
+			pst.setBoolean(3, libro.isEntregado());
 			pst.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -175,12 +174,9 @@ public class LibroModelo extends Conector {
 	public void prestar(Libro libro) {
 		PreparedStatement pst;
 		try {
-			pst = super.conexion.prepareStatement("UPDATE libros SET id=?,prestado=?,usuario=?,fechaPrestamo=? WHERE id=?");
-			pst.setInt(1, libro.getId());
-			pst.setBoolean(2, libro.isEntregado());
-			pst.setString(3, libro.getUsuario().getNombre());
-			java.sql.Date fechaPrestamo= new java.sql.Date(libro.getFechaPrestamo().getTime());
-			pst.setDate(4, fechaPrestamo);
+			pst = super.conexion.prepareStatement("UPDATE libros SET prestado=? WHERE id=?");
+			pst.setBoolean(1, libro.isEntregado());
+			pst.setInt(2, libro.getId());
 			pst.executeUpdate();
 			
 		} catch (SQLException e) {

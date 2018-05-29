@@ -38,12 +38,30 @@
     </servlet-mapping>
     
     <servlet>
+        <servlet-name>DevolverLibro</servlet-name>
+        <servlet-class>servlets.DevolverLibro</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DevolverLibro</servlet-name>
+        <url-pattern>/DevolverLibro</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
         <servlet-name>ListarUsuarios</servlet-name>
         <servlet-class>servlets.ListarUsuarios</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ListarUsuarios</servlet-name>
         <url-pattern>/ListarUsuarios</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>PrestarLibro</servlet-name>
+        <servlet-class>servlets.PrestarLibro</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PrestarLibro</servlet-name>
+        <url-pattern>/PrestarLibro</url-pattern>
     </servlet-mapping>
     
     <servlet>

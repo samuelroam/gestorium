@@ -23,7 +23,7 @@
 <div>
 <h3>Gestión de libros</h3>
 <ul>
-<li><a class="btn btn-warning" href="busqueda.jsp">buscar libro</a></li>
+<li><a class="btn btn-warning" href="libros/busqueda.jsp">buscar libro</a></li>
 <br>
 <li><a class="btn btn-warning" href="libros/listarLibros.jsp">listar libros</a></li>
 <br>

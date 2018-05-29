@@ -32,9 +32,9 @@ Libro libro = (Libro)request.getAttribute("Libro");
 	</div>
 	<div class="row">
 	<div class="col">
-		<a class="btn btn-success" href="listarLibros.jsp">Listar libros</a>
-		<a class="btn btn-danger" href="prestar.jsp">Pedir prestamo de libro</a>
-		<a class="btn btn-warning" href=#>Devolver prestamo de libro</a>
+		<a class="btn btn-success" href="libros/listarLibros.jsp">Listar libros</a>
+		<a class="btn btn-danger" href="PrestarLibro?id=<%=libro.getId()%>">Pedir prestamo de libro</a>
+		<a class="btn btn-warning" href="DevolverLibro?id=<%=libro.getId()%>">Devolver prestamo de libro</a>
 	</div>
 	</div>
 	

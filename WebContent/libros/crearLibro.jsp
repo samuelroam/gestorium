@@ -10,14 +10,12 @@
 <body>
 <%
 LibroModelo libroModelo = new LibroModelo();
-String titulo = request.getParameter("titulo");
-String autor = request.getParameter("autor");
-String fecha = request.getParameter("fecha");
 
 Libro libro = new Libro();
-libro.setTitulo(titulo);
-libro.setAutor(autor);
-libro.setFecha(fecha);
+libro.setTitulo(request.getParameter("titulo"));
+libro.setAutor(request.getParameter("autor"));
+libro.setFecha(request.getParameter("fecha"));
+libro.setEntregado(false);
 
 libroModelo.insertarLibro(libro);
 
