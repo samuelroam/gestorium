@@ -11,7 +11,6 @@
 	crossorigin="anonymous">
 </head>
 <body>
-<%@include file="includes/nav.html" %>
 
 <a class="btn btn-success" href="sesion/loginForm.jsp">Ir al login</a>
 <a class="btn btn-warning" href="registerForm.jsp">Registrarse</a>
