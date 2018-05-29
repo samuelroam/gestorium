@@ -11,24 +11,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import modelo.*;
 
-/**
- * Servlet implementation class PrestarLibro
- */
+
 @WebServlet("/PrestarLibro")
 public class PrestarLibro extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public PrestarLibro() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int idLibro = Integer.parseInt(request.getParameter("id"));
@@ -48,9 +41,7 @@ public class PrestarLibro extends HttpServlet {
 	    
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

@@ -24,6 +24,9 @@ public class ListarUsuarios extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		Usuario usuarioLogueado = (Usuario)session.getAttribute("usuarioLogueado");
+		if(usuarioLogueado != null){
 		//conseguir usaurios
 		UsuarioModelo usuarioModelo = new UsuarioModelo();
 	    ArrayList<Usuario> usuarios = usuarioModelo.selectAll();
@@ -42,6 +45,9 @@ public class ListarUsuarios extends HttpServlet {
 		//meterlos en el request
 		RequestDispatcher rd = request.getRequestDispatcher("listaUsuarios.jsp");
 		rd.forward(request, response);
+		}else{
+			RequestDispatcher rd = request.getRequestDispatcher("loginForm.jsp");
+		}
 		
 		
 		
