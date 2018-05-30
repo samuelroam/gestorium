@@ -14,49 +14,48 @@ import javax.servlet.http.HttpSession;
 
 import modelo.*;
 
-
 @WebServlet("/ListarUsuarios")
 public class ListarUsuarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public ListarUsuarios() {
-        super();
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		Usuario usuarioLogueado = (Usuario)session.getAttribute("usuarioLogueado");
-		if(usuarioLogueado != null){
-		//conseguir usaurios
-		UsuarioModelo usuarioModelo = new UsuarioModelo();
-	    ArrayList<Usuario> usuarios = usuarioModelo.selectAll();
-	    
-		Iterator<Usuario> i = usuarios.iterator();
-		Usuario usuario;
-		UsuarioModelo modeloUsuario = new UsuarioModelo();
-		
-		while(i.hasNext()){
-			usuario = i.next();
-		}
-		
-		//enviar datos
-		request.setAttribute("usuarios", usuarios);
-		
-		//meterlos en el request
-		RequestDispatcher rd = request.getRequestDispatcher("listaUsuarios.jsp");
-		rd.forward(request, response);
-		}else{
-			RequestDispatcher rd = request.getRequestDispatcher("loginForm.jsp");
-		}
-		
-		
-		
-		//abrir vista listaUsuarios
-	response.getWriter().println("soy servlet listar usuarios");
+	public ListarUsuarios() {
+		super();
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		Usuario usuarioLogueado = (Usuario)session.getAttribute("usuarioLogueado");
+		if (usuarioLogueado != null) {
+			// conseguir usaurios
+			UsuarioModelo usuarioModelo = new UsuarioModelo();
+			ArrayList<Usuario> usuarios = usuarioModelo.selectAll();
+
+			Iterator<Usuario> i = usuarios.iterator();
+			Usuario usuario;
+			UsuarioModelo modeloUsuario = new UsuarioModelo();
+
+			while (i.hasNext()) {
+				usuario = i.next();
+			}
+
+			// enviar datos
+			request.setAttribute("usuarios", usuarios);
+
+			// meterlos en el request
+			RequestDispatcher rd = request.getRequestDispatcher("listaUsuarios.jsp");
+			rd.forward(request, response);
+		} else {
+			RequestDispatcher rd = request.getRequestDispatcher("loginForm.jsp");
+		}
+
+		// abrir vista listaUsuarios
+		response.getWriter().println("soy servlet listar usuarios");
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 	}
 
 }

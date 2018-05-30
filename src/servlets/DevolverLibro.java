@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import modelo.Libro;
 import modelo.LibroModelo;
@@ -31,7 +32,7 @@ int idLibro = Integer.parseInt(request.getParameter("id"));
 		
 		libro.setEntregado(false);
 		
-	    libroModelo.prestar(libro);
+	    libroModelo.devolver(libro);
 
 	    request.setAttribute("libro", libro);
 	    
