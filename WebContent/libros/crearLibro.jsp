@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@page import="modelo.*" %>
+	pageEncoding="ISO-8859-1"%>
+<%@page import="modelo.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,19 +8,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-LibroModelo libroModelo = new LibroModelo();
+	<%
+		LibroModelo libroModelo = new LibroModelo();
 
-Libro libro = new Libro();
-libro.setTitulo(request.getParameter("titulo"));
-libro.setAutor(request.getParameter("autor"));
-libro.setFecha(request.getParameter("fecha"));
-libro.setEntregado(false);
+		Libro libro = new Libro();
+		libro.setTitulo(request.getParameter("titulo"));
+		libro.setAutor(request.getParameter("autor"));
+		libro.setFecha(request.getParameter("fecha"));
+		libro.setEntregado(false);
 
-libroModelo.insertarLibro(libro);
+		libroModelo.insertarLibro(libro);
 
-response.sendRedirect("listarLibros.jsp");
-%>
+		response.sendRedirect("listarLibros.jsp");
+	%>
 
 </body>
 </html>

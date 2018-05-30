@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="../includes/nav.html" %>
 
 <form action="crearLibro.jsp">
 
