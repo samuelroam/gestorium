@@ -74,6 +74,15 @@
     </servlet-mapping>
     
     <servlet>
+        <servlet-name>Registro</servlet-name>
+        <servlet-class>servlets.Registro</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Registro</servlet-name>
+        <url-pattern>/Registro</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
         <servlet-name>VerLibro</servlet-name>
         <servlet-class>servlets.VerLibro</servlet-class>
     </servlet>
