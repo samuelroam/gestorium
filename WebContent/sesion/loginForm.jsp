@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,29 +11,27 @@
 	crossorigin="anonymous">
 </head>
 <body>
-<%@include file="../includes/nav.html" %>
 
-<hr/>  
-  
-<h3>Login Form</h3>  
-<%  
-String profile_msg=(String)request.getAttribute("profile_msg");  
-if(profile_msg!=null){  
-out.print(profile_msg);  
-}  
-String login_msg=(String)request.getAttribute("login_msg");  
-if(login_msg!=null){  
-out.print(login_msg);  
-}  
- %>  
- <br/>  
-<form action="../Login" method="post">  
-<div id="email">Email:<input type="text" name="email" value="holamundo" placeholder="email"/><br/><br/></div>
+	<hr />
 
-<div id="password">Password:<input type="password" value="mundo" name="password"/><br/><br/></div>
+	<h3>Login Form</h3>
+	<%
+		
+	%>
+	<br />
+	<form action="../Login" method="post">
+		<div id="email">
+			Email:<input type="text" value="holamundo" name="email" 
+				placeholder="email" /><br /> <br />
+		</div>
 
-<input type="submit" value="login"/>
-</form>
+		<div id="password">
+			Password:<input type="password" value="mundo" name="password" /><br />
+			<br />
+		</div>
+
+		<input class="btn btn-success" type="submit" value="login" />
+	</form>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

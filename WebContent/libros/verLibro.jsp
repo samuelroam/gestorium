@@ -1,10 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ page import="modelo.*" %>
-    <%
-
-Libro libro = (Libro)request.getAttribute("Libro");
-
+	pageEncoding="ISO-8859-1"%>
+<%@ page import="modelo.*"%>
+<%
+	Libro libro = (Libro) request.getAttribute("Libro");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -17,28 +15,47 @@ Libro libro = (Libro)request.getAttribute("Libro");
 	crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
-	<div class="row">
-	<div class="col">
-	<h1>Informacion del libro</h1>
-		<table>
-			<tr><td>Titulo:</td><td><%=libro.getTitulo()%></td></tr>
-			<tr><td>Autor:</td><td><%=libro.getAutor()%></td></tr>
-			<tr><td>Prestamo:</td><td><%=libro.isEntregado() %></td></tr>
-			<tr><td>Prestamo:</td><td><%=libro.getFechaPrestamo() %></td></tr>
-			<tr><td>Prestamo:</td><td><%=libro.getUsuario() %> </td></tr>
-		</table>
+<%@include file="../includes/nav.html" %>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>Informacion del libro</h1>
+				<table>
+					<tr>
+						<td>Titulo:</td>
+						<td><%=libro.getTitulo()%></td>
+					</tr>
+					<tr>
+						<td>Autor:</td>
+						<td><%=libro.getAutor()%></td>
+					</tr>
+					<tr>
+						<td>Prestamo:</td>
+						<td><%=libro.isEntregado()%></td>
+					</tr>
+					<tr>
+						<td>Prestamo:</td>
+						<td><%=libro.getFechaPrestamo()%></td>
+					</tr>
+					<tr>
+						<td>Prestamo:</td>
+						<td><%=libro.getUsuario()%></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<a class="btn btn-success" href="libros/listarLibros.jsp">Listar
+					libros</a> <a class="btn btn-danger"
+					href="PrestarLibro?id=<%=libro.getId()%>">Pedir prestamo de
+					libro</a> <a class="btn btn-warning"
+					href="DevolverLibro?id=<%=libro.getId()%>">Devolver prestamo de
+					libro</a>
+			</div>
+		</div>
+
 	</div>
-	</div>
-	<div class="row">
-	<div class="col">
-		<a class="btn btn-success" href="libros/listarLibros.jsp">Listar libros</a>
-		<a class="btn btn-danger" href="PrestarLibro?id=<%=libro.getId()%>">Pedir prestamo de libro</a>
-		<a class="btn btn-warning" href="DevolverLibro?id=<%=libro.getId()%>">Devolver prestamo de libro</a>
-	</div>
-	</div>
-	
-</div>
 
 
 </body>

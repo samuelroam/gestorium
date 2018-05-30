@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ page import="modelo.*" %>
-    <%@ page import="java.util.ArrayList" %>
-    <%@ page import="java.util.Iterator" %>
-    <%
-    LibroModelo libroModelo = new LibroModelo();
-    ArrayList<Libro> libros = libroModelo.selectAll();
-    %>
+	pageEncoding="ISO-8859-1"%>
+<%@ page import="modelo.*"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.Iterator"%>
+<%
+	LibroModelo libroModelo = new LibroModelo();
+	ArrayList<Libro> libros = libroModelo.selectAll();
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,70 +18,69 @@
 	crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
-	<div class="row">
-		<div class="col">
-			<h1>Listado de Libros</h1>
+<%@include file="../includes/nav.html" %>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>Listado de Libros</h1>
+			</div>
+			<div class="col">
+				<a class="btn btn-primary" href="anadirLibro.jsp">Añadir libro</a>
+			</div>
 		</div>
-		<div class="col">
-			<a class="btn btn-primary" href="anadirLibro.jsp">Añadir libro</a>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col">
-			<table class="table">
-			<thead class="thead-dark">
-				<tr><th>Titulo</th><th>Autor</th><th>Fecha</th></tr>
-			</thead>
-			<tbody>
-			
-			<%
-			Iterator<Libro> i = libros.iterator();
-			Libro libro;
-			LibroModelo  modeloLibro = new LibroModelo();
-			
-			while(i.hasNext()){
-				libro = i.next();
-				String clase;
-				if(libroModelo.estaDisponible(libro)){
-					clase = "table-danger";
-					//out.print("<tr class='table-success'>");
-				}else{
-					clase = "table-success";
-					//out.print("<tr class='table-danger'>");
-				}
-				%>
-				<tr class="<%=clase%>">
-					<td>
-						<%=libro.getTitulo()%>
-					</td>
-					<td>
-						<%=libro.getAutor()%>
-					</td>
-					<td>
-						<%=libro.getFecha() %>
-					</td>
-					<td>
-					<%if(libro.isEntregado()==true) {
-						out.println("no está disponible");
-					}else{
-						out.println("está disponible");
-					}
-					%>
-					
-					<td>
-						<a class="btn btn-info" href="../VerLibro?id=<%=libro.getId()%>">ver</a>
-					</td>
-				</tr>
-				<%
-			}//fin while
-			%>
+		<div class="row">
+			<div class="col">
+				<table class="table">
+					<thead class="thead-dark">
+						<tr>
+							<th>Titulo</th>
+							<th>Autor</th>
+							<th>Fecha</th>
+						</tr>
+					</thead>
+					<tbody>
 
-			</tbody>
-			</table>
+						<%
+							Iterator<Libro> i = libros.iterator();
+							Libro libro;
+							LibroModelo modeloLibro = new LibroModelo();
+
+							while (i.hasNext()) {
+								libro = i.next();
+								String clase;
+								if (libroModelo.estaDisponible(libro)) {
+									clase = "table-danger";
+									//out.print("<tr class='table-success'>");
+								} else {
+									clase = "table-success";
+									//out.print("<tr class='table-danger'>");
+								}
+						%>
+						<tr class="<%=clase%>">
+							<td><%=libro.getTitulo()%></td>
+							<td><%=libro.getAutor()%></td>
+							<td><%=libro.getFecha()%></td>
+							<td>
+								<%
+									if (libro.isEntregado() == true) {
+											out.println("no está disponible");
+										} else {
+											out.println("está disponible");
+										}
+								%>
+							
+							<td><a class="btn btn-info"
+								href="../VerLibro?id=<%=libro.getId()%>">ver</a></td>
+						</tr>
+						<%
+							} //fin while
+						%>
+
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
-</div>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

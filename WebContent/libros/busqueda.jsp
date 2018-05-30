@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="../includes/nav.html" %>
 <form action="../BuscarPorTitulo">
 <input type="text" name="titulo" placeholder="busca un libro por titulo">
 <input class="btn btn-primary" type="submit" value="buscar">

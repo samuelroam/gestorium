@@ -22,7 +22,7 @@
 	
 	usuarioModelo.insertarUsuario(usuario);
 	
-	response.sendRedirect("../autenticado.jsp");
+	response.sendRedirect("autenticado.jsp");
 	
 	%>
 

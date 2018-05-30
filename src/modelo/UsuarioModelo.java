@@ -30,10 +30,11 @@ public class UsuarioModelo extends Conector {
 	}
 
 
-	public Usuario comprobarLogin(String email) {
+	public Usuario comprobarLogin(String email, String contrasena) {
 		try {
-			PreparedStatement pst = super.conexion.prepareStatement("SELECT * FROM usuarios WHERE email = ?");
+			PreparedStatement pst = super.conexion.prepareStatement("SELECT * FROM usuarios WHERE email = ? and contrasena = ?");
 			pst.setString(1, email);
+			pst.setString(2, contrasena);
 			ResultSet rst = pst.executeQuery();
 
 			if (rst.next()) {
